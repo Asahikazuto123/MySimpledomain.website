@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Emotion Question</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+
+  p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    padding: 15px 30px;
+    margin: 10px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  #yesButton {
+    background-color: #90ee90;
+    color: white;
+  }
+
+  #noButton {
+    background-color: #add8e6;
+    color: white;
+    position: absolute;
+    transition: transform 0.5s ease;
+  }
+</style>
+</head>
+<body>
+
+<p>Do you have feelings towards me? 💘</p>
+<button id="yesButton" onclick="showMessage()">Yes 😍</button>
+<button id="noButton" onclick="moveButton()">No 😅</button>
+
+<script>
+  function showMessage() {
+    alert('HAHA no choices huh 😂 Pm na kasi 💬');
+  }
+
+  function moveButton() {
+    var noButton = document.getElementById('noButton');
+    var newX = Math.random() * window.innerWidth - 50;
+    var newY = Math.random() * window.innerHeight - 50;
+    noButton.style.transform = 'translate(' + newX + 'px, ' + newY + 'px)';
+  }
+</script>
+
+</body>
+</html>
